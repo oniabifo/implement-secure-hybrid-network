@@ -296,7 +296,3 @@ resource vmNameWindows 'Microsoft.Compute/virtualMachines@2019-07-01' = {
     }
   }
 }
-
-output vpnIp string = mocOnpremGateway_name.properties.bgpSettings.bgpPeeringAddresses[0].tunnelIpAddresses[0]
-output mocOnpremNetworkPrefix string = mocOnpremNetwork.addressPrefix
-output mocOnpremGatewayName string = mocOnpremGateway.name
