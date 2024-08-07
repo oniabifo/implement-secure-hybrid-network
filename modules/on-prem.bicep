@@ -25,8 +25,8 @@ param vmSize string = 'Standard_A1_v2'
 param configureSitetosite bool = true
 param location string
 
-var nicNameWindows_var = 'nic-windows'
-var vmNameWindows_var = 'vm-windows'
+var nicName = 'nic-windows'
+var vmName = 'vm-windows'
 var windowsOSVersion = '2016-Datacenter'
 
 resource mocOnpremNetwork_name 'Microsoft.Network/virtualNetworks@2020-05-01' = {
@@ -242,7 +242,7 @@ resource bastionHost_name 'Microsoft.Network/bastionHosts@2020-06-01' = {
 }
 
 resource nicNameWindows 'Microsoft.Network/networkInterfaces@2020-05-01' = {
-  name: nicNameWindows_var
+  name: nicName
   location: location
   properties: {
     ipConfigurations: [
@@ -265,14 +265,14 @@ resource nicNameWindows 'Microsoft.Network/networkInterfaces@2020-05-01' = {
 }
 
 resource vmNameWindows 'Microsoft.Compute/virtualMachines@2019-07-01' = {
-  name: vmNameWindows_var
+  name: vmName
   location: location
   properties: {
     hardwareProfile: {
       vmSize: vmSize
     }
     osProfile: {
-      computerName: vmNameWindows_var
+      computerName: vmName
       adminUsername: adminUserName
       adminPassword: adminPassword
     }
