@@ -8,4 +8,4 @@ param adminUserName = 'azureuser'
 
 param adminPassword = 'YourPassword123!'
 
-param resourceGrouplocation = 'eastus'
+param resourceGrouplocation = 'centralus'

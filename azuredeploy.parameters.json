@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "mocOnPremResourceGroup": {
-        "value": "site-to-site-mock-prem"
+        "value": "clickclaims-production-centralus-mock"
       },
       "azureNetworkResourceGroup": {
-        "value": "site-to-site-azure-network"
+        "value": "clickclaims-production-centralus-network-mock"
       },
       "adminUserName": {
-        "value": "azureuser"
+        "value": "eclaimsadmin"
       },
       "adminPassword": {
         "value": "YourPassword123!"
       },
       "resourceGrouplocation": {
-        "value": "eastus"
+        "value": "1|eDQ4BSo6]8"
       }
     }
   }

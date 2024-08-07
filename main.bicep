@@ -12,7 +12,7 @@ param adminUserName string
 )
 @secure()
 param adminPassword string
-param resourceGrouplocation string = 'eastus'
+param resourceGrouplocation string = 'centralus'
 
 resource mocOnPremResourceGroup_resource 'Microsoft.Resources/resourceGroups@2019-10-01' = {
   name: mocOnPremResourceGroup
