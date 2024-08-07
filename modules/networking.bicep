@@ -816,3 +816,8 @@ resource ilbDiagnosticSettings 'Microsoft.Network/loadBalancers/providers/diagno
   }
   dependsOn: [ilb]
 }
+
+output vpnIp string = vpngGtwy.properties.bgpSettings.bgpPeeringAddresses[0].tunnelIpAddresses[0]
+output mocOnpremNetwork string = hubNetwork.addressPrefix
+output spokeNetworkAddressPrefix string = spokeNetwork.addressPrefix
+output azureGatewayName string = vpnGateway.name
