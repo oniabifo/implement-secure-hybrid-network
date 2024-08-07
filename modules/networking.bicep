@@ -27,7 +27,7 @@ param vpnGateway object = {
 param bastionHost object = {
   name: 'AzureBastionHost'
   subnetName: 'AzureBastionSubnet'
-  subnetPrefix: '192.168.254.0/26'
+  subnetPrefix: '10.0.2.128/27'
   publicIPAddressName: 'pip-bastion'
   nsgName: 'nsg-hub-bastion'
 }
@@ -379,8 +379,12 @@ resource vpnGtwyPublicIp 'Microsoft.Network/publicIPAddresses@2019-11-01' =
   if (configureSitetosite) {
     name: vpnGateway.publicIPAddressName
     location: location
+    sku: {
+      name: 'Standard'
+    }
     properties: {
-      publicIPAllocationMethod: 'Dynamic'
+      publicIPAllocationMethod: 'Static'
+      
     }
   }
 

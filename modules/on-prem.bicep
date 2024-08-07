@@ -63,8 +63,11 @@ resource mocOnpremGateway_publicIPAddress 'Microsoft.Network/publicIPAddresses@2
   if (configureSitetosite) {
     name: mocOnpremGateway.publicIPAddressName
     location: location
+    sku: {
+      name: 'Standard'
+    }
     properties: {
-      publicIPAllocationMethod: 'Dynamic'
+      publicIPAllocationMethod: 'Static'
     }
   }
 
